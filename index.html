@@ -77,8 +77,58 @@
             <div class="form-text">number</div>
         </div>
 
+        <div class="mb-3">
+            <label for="disableAudioLevels" class="form-label">disableAudioLevels</label>
+            <input type="text" class="form-control" id="disableAudioLevels">
+            <div class="form-text">boolean true / false</div>
+        </div>
+
+        <hr>
+            <h4>Audio Processing</h4>
+            <div class="mb-3">
+                <label for="disableAP" class="form-label">disableAP</label>
+                <input type="text" class="form-control" id="disableAP">
+                <div class="form-text">boolean true / false  => Disables all audio processing</div>
+            </div>
+
+
+            <div class="mb-3">
+                <label for="disableAEC" class="form-label">disableAEC</label>
+                <input type="text" class="form-control" id="disableAEC">
+                <div class="form-text">boolean true / false => Disables Acoustic Echo Cancellation</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="disableAGC" class="form-label">disableAGC</label>
+                <input type="text" class="form-control" id="disableAGC">
+                <div class="form-text">boolean true / false => Disables Automatic Gain Control</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="disableNS" class="form-label">disableNS</label>
+                <input type="text" class="form-control" id="disableNS">
+                <div class="form-text">boolean true / false => Disables Noise Suppression</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="disableHPF" class="form-label">disableHPF</label>
+                <input type="text" class="form-control" id="disableHPF">
+                <div class="form-text">boolean true / false => Disables Highpass Filter</div>
+            </div>
+
+        <hr>
+
+
+
+
         <button id="create-url" type="button" class="btn btn-primary">Create</button>
       </form>
+
+      <div class="alert alert-primary mt-4" role="alert">
+        https://developers.google.com/web/updates/2016/12/devtools-javascript-cpu-profile-migration
+        https://medium.com/@marielgrace/how-to-analyze-runtime-performance-google-devtools-99fda64c09cb
+     </div>
+
       <div id="result" class="alert alert-success mt-4" role="alert">
         
     </div>

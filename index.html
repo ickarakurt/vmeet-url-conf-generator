@@ -15,105 +15,247 @@
 
     <div class="container mt-5">
         <form>
-        <div class="mb-3">
-          <label for="constraints.video.height" class="form-label">constraints.video.height</label>
-          <input type="text" class="form-control" id="constraints.video.height">
-          <div class="form-text">number</div>
-        </div>
-        <div class="mb-3">
-            <label for="constraints.video.width" class="form-label">constraints.video.width</label>
-            <input type="text" class="form-control" id="constraints.video.width">
-            <div class="form-text">number</div>
-          </div>
-
-          <div class="mb-3">
-            <label for="constraints.video.frameRate.max" class="form-label">constraints.video.frameRate.max</label>
-            <input type="text" class="form-control" id="constraints.video.frameRate.max">
-            <div class="form-text">number</div>
-        </div>
-          
-        <div class="mb-3">
-            <label for="constraints.video.aspectRatio" class="form-label">constraints.video.aspectRatio</label>
-            <input type="text" class="form-control" id="constraints.video.aspectRatio">
-            <div class="form-text">number</div>
-        </div>
-
-        <div class="mb-3">
-            <label for="maxFullResolutionParticipants" class="form-label">maxFullResolutionParticipants</label>
-            <input type="text" class="form-control" id="maxFullResolutionParticipants">
-            <div class="form-text">number : How many participants while in the tile view mode, before the receiving video quality is reduced from HD to SD.</div>
-        </div>
-
-        <div class="mb-3">
-            <label for="disableSimulcast" class="form-label">disableSimulcast</label>
-            <input type="text" class="form-control" id="disableSimulcast">
-            <div class="form-text">boolean true / false</div>
-        </div>
-
-        
-        <div class="mb-3">
-            <label for="disableH264" class="form-label">disableH264</label>
-            <input type="text" class="form-control" id="disableH264">
-            <div class="form-text">boolean true / false</div>
-        </div>
-
-
-        <div class="mb-3">
-            <label for="enableLayerSuspension" class="form-label">enableLayerSuspension</label>
-            <input type="text" class="form-control" id="enableLayerSuspension">
-            <div class="form-text">boolean true / false</div>
-        </div>
-
-        <div class="mb-3">
-            <label for="disableRtx" class="form-label">disableRtx</label>
-            <input type="text" class="form-control" id="disableRtx">
-            <div class="form-text">true / false</div>
-        </div>
-
-        
-        <div class="mb-3">
-            <label for="channelLastN" class="form-label">channelLastN</label>
-            <input type="text" class="form-control" id="channelLastN">
-            <div class="form-text">number</div>
-        </div>
-
-        <div class="mb-3">
-            <label for="disableAudioLevels" class="form-label">disableAudioLevels</label>
-            <input type="text" class="form-control" id="disableAudioLevels">
-            <div class="form-text">boolean true / false</div>
-        </div>
 
         <hr>
-            <h4>Audio Processing</h4>
+        <h4 class="mt-2 mb-2 text-primary">Video Constraints</h4>
+
+        <h5 class="text-dark mb-2 mt-2">Video Height</h5>
+
+        <div class="mb-3">
+            <label for="constraints.video.height.min" class="form-label">constraints.video.height.min</label>
+            <input type="number" class="form-control" id="constraints.video.height.min">
+            <div class="form-text">number</div>
+        </div>
+
+
+        <div class="mb-3">
+            <label for="constraints.video.height.max" class="form-label">constraints.video.height.max</label>
+            <input type="number" class="form-control" id="constraints.video.height.max">
+            <div class="form-text">number</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="constraints.video.height.ideal" class="form-label">constraints.video.height.ideal</label>
+            <input type="number" class="form-control" id="constraints.video.height.ideal">
+            <div class="form-text">number</div>
+        </div>
+
+        <h5 class="text-dark mb-2 mt-2">Video Width</h5>
+
+        <div class="mb-3">
+            <label for="constraints.video.width.min" class="form-label">constraints.video.width.min</label>
+            <input type="number" class="form-control" id="constraints.video.width.min">
+            <div class="form-text">number</div>
+        </div>
+
+
+        <div class="mb-3">
+            <label for="constraints.video.width.max" class="form-label">constraints.video.width.max</label>
+            <input type="number" class="form-control" id="constraints.video.width.max">
+            <div class="form-text">number</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="constraints.video.width.ideal" class="form-label">constraints.video.width.ideal</label>
+            <input type="number" class="form-control" id="constraints.video.width.ideal">
+            <div class="form-text">number</div>
+        </div>
+
+        <h5 class="text-dark mb-2 mt-2">Other</h5>
+
+        <div class="mb-3">
+            <label for="constraints.video.frameRate.max" class="form-label">constraints.video.frameRate.max</label>
+            <input type="number" class="form-control" id="constraints.video.frameRate.max">
+            <div class="form-text">number</div>
+        </div>
+            
+        <div class="mb-3">
+            <div class="form-group">
+                <label for="constraints.video.aspectRatio" class="form-label">constraints.video.aspectRatio</label>
+                <select class="form-control" id="constraints.video.aspectRatio">
+                  <option selected value> -- select an option -- </option>
+                  <option value="1.77">16/7</option>
+                  <option value="1.33">4/3</option>
+                </select>
+              </div>
+            <div class="form-text">boolean true / false</div>
+        </div>  
+
+        <hr>
+
+        <h4 class="mt-2 mb-2 text-primary">Optimisation</h4>
+
+        <div class="mb-3">
+            <div class="form-group">
+                <label for="maxFullResolutionParticipants" class="form-label">maxFullResolutionParticipants</label>
+                <select class="form-control" id="maxFullResolutionParticipants">
+                  <option selected value> -- select an option -- </option>
+                  <option>-1 (disable feature)</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                </select>
+              </div>
+              <div class="form-text">number : How many participants while in the tile view mode, before the receiving video quality is reduced from HD to SD.</div>
+            </div>  
+
+
+        <div class="mb-3">
+            <div class="form-group">
+                <label for="disableSimulcast" class="form-label">disableSimulcast</label>
+                <select class="form-control" id="disableSimulcast">
+                  <option selected value> -- select an option -- </option>
+                  <option>true</option>
+                  <option>false</option>
+                </select>
+              </div>
+            <div class="form-text">Enable / disable simulcast support.</div>
+        </div>  
+
+
+
+        <div class="mb-3">
+            <div class="form-group">
+                <label for="disableH264" class="form-label">disableH264</label>
+                <select class="form-control" id="disableH264">
+                  <option selected value> -- select an option -- </option>
+                  <option>true</option>
+                  <option>false</option>
+                </select>
+              </div>
+              <div class="form-text">If set to true, disable H.264 video codec by stripping it out of the SDP</div>
+        </div>  
+
+
+        <div class="mb-3">
+            <div class="form-group">
+                <label for="enableLayerSuspension" class="form-label">enableLayerSuspension</label>
+                <select class="form-control" id="enableLayerSuspension">
+                  <option selected value> -- select an option -- </option>
+                  <option>true</option>
+                  <option>false</option>
+                </select>
+              </div>
+              <div class="form-text"> If enabled, endpoints whose HD layers are not in use will be suspended (no longer sent) until they are requested again.</div>
+        </div>  
+
+
+
+        <div class="mb-3">
+            <div class="form-group">
+                <label for="disableRtx" class="form-label">disableRtx</label>
+                <select class="form-control" id="disableRtx">
+                  <option selected value> -- select an option -- </option>
+                  <option>true</option>
+                  <option>false</option>
+                </select>
+              </div>
+            <div class="form-text">Disables or enables RTX (RFC 4588)</div>
+        </div>  
+
+
+        
+        <div class="mb-3">
+            <div class="form-group">
+                <label for="channelLastN" class="form-label">channelLastN</label>
+                <select class="form-control" id="channelLastN">
+                  <option selected value> -- select an option -- </option>
+                  <option>-1 (disable lastN)</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                </select>
+              </div>
+            <div class="form-text">The SFU only forwards a fixed number of video streams (N) to each endpoint, changing the set of forwarded streams dynamically according to audio activity.</div>
+        </div>  
+     
+        <div class="mb-3">
+            <div class="form-group">
+                <label for="disableAudioLevels" class="form-label">disableAudioLevels</label>
+                <select class="form-control" id="disableAudioLevels">
+                  <option selected value> -- select an option -- </option>
+                  <option>true</option>
+                  <option>false</option>
+                </select>
+              </div>
+            <div class="form-text">Disable measuring of audio levels</div>
+        </div>  
+
+
+        <hr>
+            <h4 class="mt-2 mb-2 text-primary">Audio Processing</h4>
+
             <div class="mb-3">
-                <label for="disableAP" class="form-label">disableAP</label>
-                <input type="text" class="form-control" id="disableAP">
-                <div class="form-text">boolean true / false  => Disables all audio processing</div>
-            </div>
+                <div class="form-group">
+                    <label for="disableAP" class="form-label">disableAP</label>
+                    <select class="form-control" id="disableAP">
+                      <option selected value> -- select an option -- </option>
+                      <option>true</option>
+                      <option>false</option>
+                    </select>
+                  </div>
+                <div class="form-text">Disables all audio processing</div>
+            </div>  
 
 
             <div class="mb-3">
-                <label for="disableAEC" class="form-label">disableAEC</label>
-                <input type="text" class="form-control" id="disableAEC">
-                <div class="form-text">boolean true / false => Disables Acoustic Echo Cancellation</div>
-            </div>
+                <div class="form-group">
+                    <label for="disableAEC" class="form-label">disableAEC</label>
+                    <select class="form-control" id="disableAEC">
+                      <option selected value> -- select an option -- </option>
+                      <option>true</option>
+                      <option>false</option>
+                    </select>
+                  </div>
+                <div class="form-text">Disables Acoustic Echo Cancellation</div>
+            </div>  
 
             <div class="mb-3">
-                <label for="disableAGC" class="form-label">disableAGC</label>
-                <input type="text" class="form-control" id="disableAGC">
-                <div class="form-text">boolean true / false => Disables Automatic Gain Control</div>
-            </div>
+                <div class="form-group">
+                    <label for="disableAGC" class="form-label">disableAGC</label>
+                    <select class="form-control" id="disableAGC">
+                      <option selected value> -- select an option -- </option>
+                      <option>true</option>
+                      <option>false</option>
+                    </select>
+                  </div>
+                <div class="form-text">Disables Automatic Gain Control</div>
+            </div>     
 
             <div class="mb-3">
-                <label for="disableNS" class="form-label">disableNS</label>
-                <input type="text" class="form-control" id="disableNS">
-                <div class="form-text">boolean true / false => Disables Noise Suppression</div>
-            </div>
+                <div class="form-group">
+                    <label for="disableNS" class="form-label">disableNS</label>
+                    <select class="form-control" id="disableNS">
+                      <option selected value> -- select an option -- </option>
+                      <option>true</option>
+                      <option>false</option>
+                    </select>
+                  </div>
+                <div class="form-text">Disables Noise Suppression</div>
+            </div>          
 
             <div class="mb-3">
-                <label for="disableHPF" class="form-label">disableHPF</label>
-                <input type="text" class="form-control" id="disableHPF">
-                <div class="form-text">boolean true / false => Disables Highpass Filter</div>
+                <div class="form-group">
+                    <label for="disableHPF" class="form-label">disableHPF</label>
+                    <select class="form-control" id="disableHPF">
+                      <option selected value> -- select an option -- </option>
+                      <option>true</option>
+                      <option>false</option>
+                    </select>
+                  </div>
+                <div class="form-text">Disables Highpass Filter</div>
             </div>
 
         <hr>

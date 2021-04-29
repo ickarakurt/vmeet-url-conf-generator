@@ -180,6 +180,23 @@
               </div>
             <div class="form-text">The SFU only forwards a fixed number of video streams (N) to each endpoint, changing the set of forwarded streams dynamically according to audio activity.</div>
         </div>  
+
+
+        <div class="mb-3">
+          <div class="form-group">
+              <label for="pcStatsInterval" class="form-label">pcStatsInterval</label>
+              <select class="form-control" id="pcStatsInterval">
+                <option selected value> -- select an option -- </option>
+                <option>1000</option>
+                <option>3000</option>
+                <option>7000</option>
+                <option>10000</option>
+                <option>20000</option>
+                <option>30000</option>
+              </select>
+            </div>
+          <div class="form-text">The interval at which PeerConnection.getStats() is called. Defaults to 10000</div>
+      </div>  
      
         <div class="mb-3">
             <div class="form-group">
